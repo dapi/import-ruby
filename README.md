@@ -34,7 +34,7 @@ Or install it yourself as:
 
 ## Usage
 
-Plain Ruby:
+### Plain Ruby
 
 ```ruby
 # foo_helpers.rb
@@ -63,7 +63,7 @@ BH.another_helper
 # > Ok bar
 ```
 
-Rails environment:
+### Rails environment
 
 ```ruby
 # Gemfile
