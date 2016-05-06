@@ -65,7 +65,7 @@ BH.another_helper
 
 Rails envorinment:
 
-```
+```ruby
 # Gemfile
 gem 'module_import', require: 'module_import/inject'
 
