@@ -4,7 +4,7 @@
 
 The import statement is used to import functions and objects that have been exported from an external module or classes in Ruby.
 
-This is good and simple alternative on `extend` or `include` stolen from [ES6 import statement](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import)
+This is a good and simple alternative of `extend` and `include`. The idea is stolen from [ES6 import statement](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import)
 
 ## Rationale
 
