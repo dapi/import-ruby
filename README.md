@@ -2,9 +2,7 @@
 
 [![Build Status](https://travis-ci.org/dapi/module_import.svg?branch=master)](https://travis-ci.org/dapi/module_import)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/module_import`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The import statement is used to import functions and objects that have been exported from an external module or classes in Ruby
 
 ## Installation
 
@@ -12,6 +10,12 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'module_import'
+```
+
+or require injector when you want to have `import` method in `Object`
+
+```ruby
+gem 'module_import', require: 'module_import/inject'
 ```
 
 And then execute:
@@ -23,6 +27,23 @@ Or install it yourself as:
     $ gem install module_import
 
 ## Usage
+
+```ruby
+# foo_helpers.rb
+module FooHelpers
+  def some_helper
+    puts 'Ok'
+  end
+end
+
+# example1.rb
+
+require 'foo_helpers'
+Helpers = import FooHelpers
+Helpers.some_helper
+# > Ok
+```
+
 
 TODO: Write usage instructions here
 
