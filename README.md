@@ -63,7 +63,7 @@ BH.another_helper
 # > Ok bar
 ```
 
-Rails envorinment:
+Rails environment:
 
 ```ruby
 # Gemfile
