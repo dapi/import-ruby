@@ -2,7 +2,13 @@
 
 [![Build Status](https://travis-ci.org/dapi/module_import.svg?branch=master)](https://travis-ci.org/dapi/module_import)
 
-The import statement is used to import functions and objects that have been exported from an external module or classes in Ruby
+The import statement is used to import functions and objects that have been exported from an external module or classes in Ruby.
+
+This is good and simple alternative on `extend` or `include` stolen from [ES6 import statement](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import)
+
+## Rationale
+
+Why not use `extend` or `include`? Because it mixes with your current module scope and conflicts with existens methods.
 
 ## Installation
 
@@ -28,28 +34,54 @@ Or install it yourself as:
 
 ## Usage
 
+Plain Ruby:
+
 ```ruby
 # foo_helpers.rb
 module FooHelpers
   def some_helper
-    puts 'Ok'
+    puts 'Ok foo'
+  end
+end
+
+# bar_helpers.rb
+class BarHelpers
+  def another_helper
+    puts 'Ok bar'
   end
 end
 
 # example1.rb
-
 require 'foo_helpers'
-Helpers = import FooHelpers
-Helpers.some_helper
-# > Ok
+FH = import FooHelpers
+FH.some_helper
+# > Ok foo
+
+require 'bar_helpers'
+BH = import BarHelpers
+BH.another_helper
+# > Ok bar
 ```
 
+Rails envorinment:
 
-TODO: Write usage instructions here
+```
+# Gemfile
+gem 'module_import', require: 'module_import/inject'
+
+# app/models/user.rb
+class User < ActiveRecord::Base
+  TextHelpers = import ActionView::Helpers::TextHelper
+  
+  def short_name
+    TextHelpers.truncate name, 20
+  end
+end
+```
+
+I recomend to create directory `app/utils` and contains there primitive helpers to use its in any classes in application.
 
 ## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
