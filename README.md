@@ -53,12 +53,12 @@ end
 
 # example1.rb
 require 'foo_helpers'
-FH = import FooHelpers
+FH = ModuleImport.import FooHelpers
 FH.some_helper
 # > Ok foo
 
 require 'bar_helpers'
-BH = import BarHelpers
+BH = ModuleImport.import BarHelpers
 BH.another_helper
 # > Ok bar
 ```
