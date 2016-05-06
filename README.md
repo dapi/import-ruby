@@ -8,7 +8,7 @@ This is a good and simple alternative of `extend` and `include`. The idea is sto
 
 ## Rationale
 
-Why not use `extend` or `include`? Because it mixes with your current module scope and conflicts with existens methods.
+Why not use `extend` or `include`? Because its mixes with your current module/class scope and conflicts with existen or feature method names. Also you can not `include` concerns with same methods in one module. In case of `ModuleImport` you import every module into different namespace. It is safe and clean.
 
 ## Installation
 
