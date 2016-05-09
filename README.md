@@ -1,6 +1,6 @@
 # ModuleImport
 
-[![Build Status](https://travis-ci.org/dapi/module_import.svg?branch=master)](https://travis-ci.org/dapi/module_import)
+[[русский](README.ru.md)|[english](README.md)] [![Build Status](https://travis-ci.org/dapi/module_import.svg?branch=master)](https://travis-ci.org/dapi/module_import)
 
 The import statement is used to import functions and objects that have been exported from an external module or classes in Ruby.
 
