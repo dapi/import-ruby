@@ -10,7 +10,7 @@ This is a good and simple alternative to `extend` and `include` statements. The 
 
 ## Rationale
 
-Why not use `extend` or `include`? Because it mixes with your current module/class scope and conflicts with existing or feature method names. Also you can not `include` concerns with the same method names in the same module. In case of `ModuleImport` you import every module into different namespace. It is safe and clean.
+Why not use `extend` or `include`? Because it mixes with your current module/class scope and conflicts with existing or future method names. Also you can not `include` concerns with the same method names in the same module. In case of `ModuleImport` you import every module into different namespace. It is safe and clean.
 
 ## Installation
 
