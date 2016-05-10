@@ -4,13 +4,13 @@
 
 [Русский](README.ru.md) | *English*
 
-The import statement is used to import functions and objects that have been exported from an external module or classes in Ruby.
+The import statement is used to import functions and objects that have been exported from an external module or class in Ruby.
 
-This is a good and simple alternative of `extend` and `include`. The idea is stolen from [ES6 import statement](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import)
+This is a good and simple alternative to `extend` and `include` statements. The idea is greatly inspired by [ES6 import statement](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import)
 
 ## Rationale
 
-Why not use `extend` or `include`? Because its mixes with your current module/class scope and conflicts with existen or feature method names. Also you can not `include` concerns with same methods in one module. In case of `ModuleImport` you import every module into different namespace. It is safe and clean.
+Why not use `extend` or `include`? Because it mixes with your current module/class scope and conflicts with existing or feature method names. Also you can not `include` concerns with the same method names in the same module. In case of `ModuleImport` you import every module into different namespace. It is safe and clean.
 
 ## Installation
 
@@ -81,7 +81,7 @@ class User < ActiveRecord::Base
 end
 ```
 
-I recomend to create directory `app/utils` and contains there primitive helpers to use its in any classes in application.
+I recomend to create directory `app/utils` and put there primitive helpers to use them in any classes in the application.
 
 ## Development
 
