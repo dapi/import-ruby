@@ -81,7 +81,7 @@ class User < ActiveRecord::Base
 end
 ```
 
-I recomend to create directory `app/utils` and put there primitive helpers to use them in any classes in the application.
+It's recommended to create `app/utils` directory and put there primitive helpers to be used in any classes in your application.
 
 ## Development
 
